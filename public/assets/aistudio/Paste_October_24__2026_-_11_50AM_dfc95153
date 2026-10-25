@@ -1,0 +1,623 @@
+# OBIETTIVO PRINCIPALE: MIGLIORARE L'APPLICAZIONE ESISTENTE SENZA RICOSTRUIRLA
+
+Agisci come un team di sviluppatori senior specializzati in applicazioni di navigazione, sistemi cartografici, parcheggi intelligenti, UI/UX, integrazioni API e ottimizzazione del software.
+
+Devi lavorare DIRETTAMENTE SUL PROGETTO GIÀ ESISTENTE IN QUESTO WORKSPACE DI GOOGLE AI STUDIO.
+
+ATTENZIONE: NON DEVI RICREARE L'APPLICAZIONE DA ZERO.
+
+Non voglio un nuovo progetto, una nuova applicazione separata, un prototipo alternativo o una semplice dimostrazione delle funzionalità richieste.
+
+Voglio che tu analizzi l'applicazione attuale, comprenda come funziona e migliori il codice, l'interfaccia grafica e le funzionalità già presenti, aggiungendo esclusivamente ciò che manca o che è necessario modificare.
+
+Devi considerare il codice esistente come la base ufficiale del prodotto e conservarlo il più possibile.
+
+Il tuo lavoro consiste nel MIGLIORARE, CORREGGERE, OTTIMIZZARE ED ESTENDERE L'APPLICAZIONE ESISTENTE.
+
+Non devi sostituirla con una tua nuova interpretazione del progetto.
+
+==================================================
+1. REGOLA FONDAMENTALE: ANALIZZA PRIMA DI MODIFICARE
+==================================================
+
+Prima di effettuare qualsiasi modifica, esamina accuratamente il progetto attualmente aperto.
+
+Analizza i file, i componenti, le pagine, le funzioni, le dipendenze, le API, il sistema di navigazione e l'architettura già utilizzata.
+
+Devi comprendere come è stato costruito il prodotto e quali funzionalità sono effettivamente disponibili.
+
+Successivamente, confronta il progetto con tutte le richieste contenute in questo prompt.
+
+Per ogni funzionalità, assegna una delle seguenti classificazioni:
+
+A. GIÀ PRESENTE E FUNZIONANTE
+La funzionalità esiste e soddisfa già i requisiti.
+
+Azione: conservala. Non riscriverla senza un motivo tecnico concreto.
+
+B. PRESENTE MA MIGLIORABILE
+La funzionalità esiste, ma presenta limiti di usabilità, prestazioni, affidabilità o completezza.
+
+Azione: migliora il codice o l'interfaccia esistente, preservando quanto già funziona.
+
+C. PRESENTE MA NON FUNZIONANTE
+La funzionalità è rappresentata nell'interfaccia oppure è stata parzialmente implementata, ma non funziona correttamente.
+
+Azione: individua la causa e correggi l'implementazione esistente.
+
+D. ASSENTE
+La funzionalità richiesta non esiste.
+
+Azione: aggiungila integrandola nell'architettura corrente e riutilizzando i componenti esistenti quando possibile.
+
+E. NON REALIZZABILE CON LA CONFIGURAZIONE ATTUALE
+La funzionalità richiede un'API, una credenziale, un'autorizzazione, una dipendenza o una modifica architetturale non ancora disponibile.
+
+Azione: implementa le parti realizzabili, prepara l'integrazione e documenta precisamente ciò che manca.
+
+Non classificare come funzionante una funzionalità soltanto perché esiste un pulsante, un componente grafico o una schermata che la rappresenta.
+
+Verifica la logica e il collegamento con i servizi effettivi.
+
+IMPORTANTE: questa analisi non deve diventare una scusa per fermarsi.
+
+Dopo aver esaminato il progetto, procedi direttamente con le modifiche necessarie.
+
+Non limitarti a restituirmi un rapporto sulle cose da fare: esegui concretamente gli interventi nel progetto esistente.
+
+==================================================
+2. MODIFICA SOLTANTO QUELLO CHE È NECESSARIO
+==================================================
+
+Questa regola deve essere rispettata durante tutto il lavoro.
+
+NON:
+- Creare una seconda applicazione indipendente.
+- Sostituire integralmente l'interfaccia quando basta migliorarla.
+- Riscrivere componenti già funzionanti senza necessità.
+- Cambiare framework o linguaggio arbitrariamente.
+- Migrare a una nuova architettura senza una ragione tecnica dimostrabile.
+- Eliminare funzioni esistenti soltanto perché preferisci una soluzione differente.
+- Sostituire interi file quando è sufficiente modificare alcune parti.
+- Rimuovere API, configurazioni, dipendenze o servizi già utilizzati.
+- Creare nuove schermate che duplicano quelle esistenti.
+- Introdurre nuove librerie quando le dipendenze attuali sono sufficienti.
+- Cambiare il sistema di routing dell'applicazione senza averne verificato le conseguenze.
+- Eliminare il backend o il database esistente.
+- Sostituire dati reali con dati dimostrativi.
+- Introdurre dati inventati per simulare funzioni mancanti.
+
+DEVI:
+- Riutilizzare i componenti esistenti.
+- Correggere le funzioni nel punto in cui sono implementate, quando possibile.
+- Estendere i componenti esistenti anziché duplicarli.
+- Mantenere compatibilità con il progetto.
+- Conservare tutte le funzionalità valide.
+- Riutilizzare API e integrazioni già configurate.
+- Mantenere invariati i contratti tra frontend e backend, salvo necessità.
+- Aggiungere nuovi componenti soltanto quando realmente utili.
+- Limitare le modifiche ai file interessati dagli interventi.
+- Controllare gli eventuali effetti delle modifiche sulle altre funzionalità.
+
+Prima di modificare un componente importante, valuta quali altre parti dell'applicazione dipendono da esso.
+
+Se una modifica può compromettere una funzionalità esistente, scegli una soluzione che preservi la compatibilità.
+
+Se è necessaria una modifica architetturale importante, effettua soltanto quella indispensabile e conserva tutte le funzionalità non coinvolte.
+
+La soluzione preferita è sempre quella che migliora maggiormente il prodotto con il minor numero ragionevole di modifiche.
+
+==================================================
+3. CONSERVA L'IDENTITÀ E IL FUNZIONAMENTO DEL PROGETTO
+==================================================
+
+Mantieni l'identità dell'applicazione, le sue finalità e le parti valide del design esistente.
+
+Puoi migliorare significativamente l'interfaccia, l'esperienza utente e la struttura del codice quando necessario.
+
+Tuttavia, non devi interpretare la richiesta di miglioramento come un'autorizzazione a sostituire indiscriminatamente tutto ciò che esiste.
+
+Se una schermata funziona già bene, conserva la sua struttura fondamentale e intervieni soltanto dove serve.
+
+Se una funzione è già presente, ma il suo utilizzo è complicato, semplifica l'interfaccia senza ricostruire inutilmente la logica sottostante.
+
+Se un'integrazione è già funzionante, mantienila e migliorala soltanto quando esistono problemi concreti.
+
+Se l'applicazione utilizza già un provider cartografico, non sostituirlo automaticamente con un altro.
+
+Valuta prima se il provider attuale è adatto alle funzionalità richieste.
+
+Sostituiscilo o affiancalo con un altro servizio soltanto quando è realmente necessario, tecnicamente compatibile e consentito dalle relative condizioni d'uso.
+
+Non eliminare la configurazione attuale per inserire placeholder, API key fittizie o servizi non configurati.
+
+==================================================
+4. MIGLIORA L'INTERFACCIA ESISTENTE SENZA RIFARLA INUTILMENTE
+==================================================
+
+Esamina l'intera interfaccia attuale e individua quali elementi funzionano, quali sono superflui e quali devono essere migliorati.
+
+L'obiettivo è rendere l'applicazione molto più semplice, intuitiva, moderna e pratica da utilizzare.
+
+La mappa deve rappresentare il centro dell'esperienza.
+
+Migliora l'interfaccia esistente affinché, quando possibile, l'utente possa:
+
+- Visualizzare la mappa senza informazioni dimostrative.
+- Cercare una destinazione.
+- Visualizzare la propria posizione.
+- Avviare la navigazione.
+- Cercare parcheggi.
+- Attivare o disattivare i livelli cartografici.
+- Consultare le informazioni relative alle ZTL.
+- Ricevere gli avvisi stradali disponibili.
+- Gestire le preferenze.
+- Salvare la posizione del parcheggio.
+
+Riduci il numero di passaggi necessari per raggiungere le funzionalità principali.
+
+Raggruppa correttamente i comandi secondari.
+
+Elimina le ridondanze, non le funzionalità utili.
+
+Migliora dimensioni, spaziature, contrasto, leggibilità, icone, gerarchia visiva e comportamento dei pannelli.
+
+La grafica deve essere moderna, coerente e professionale.
+
+Evita di aggiungere elementi soltanto per rendere l'interfaccia più ricca.
+
+Non aggiungere pulsanti che non eseguono realmente un'azione.
+
+Non introdurre nuove schermate se le stesse funzionalità possono essere integrate correttamente nelle schermate attuali.
+
+Se il progetto possiede già un tema grafico efficace, miglioralo e mantienine la coerenza.
+
+Se invece presenta problemi evidenti, intervieni sulle parti problematiche senza sostituire inutilmente tutto il sistema grafico.
+
+==================================================
+5. AZZERA SOLTANTO I DATI DIMOSTRATIVI E L'ESPERIENZA INIZIALE
+==================================================
+
+Voglio che l'esperienza iniziale dell'applicazione sia equivalente a quella di un'app appena installata.
+
+Questa richiesta riguarda i dati dimostrativi e lo stato iniziale dell'interfaccia, NON il codice sorgente e NON l'infrastruttura tecnica.
+
+Esamina i dati attualmente visualizzati sulla mappa.
+
+Se trovi parcheggi, destinazioni, percorsi, segnalazioni, preferiti o cronologie inseriti soltanto per dimostrazione, rimuovili dall'esperienza iniziale.
+
+La schermata iniziale deve essere pulita.
+
+Non devono comparire:
+- Parcheggi artificiali.
+- Destinazioni predefinite.
+- Percorsi dimostrativi.
+- Segnalazioni inventate.
+- Ricerca e cronologia precompilate.
+- Preferiti di esempio.
+- Coordinate fisse usate come sostituto del GPS.
+- Informazioni stradali simulate.
+
+Non rimuovere i dati reali recuperati dai servizi effettivamente configurati, quando pertinenti e visualizzati correttamente.
+
+La mappa deve rimanere funzionante.
+
+L'utente deve poter cercare manualmente una località anche quando non ha concesso l'accesso alla posizione.
+
+Se il GPS è disponibile e l'utente concede il permesso, la posizione corrente può essere visualizzata correttamente.
+
+Se la posizione non è disponibile, non sostituirla con coordinate arbitrarie.
+
+Non eliminare:
+- File sorgente.
+- Configurazioni.
+- Chiavi API.
+- Variabili d'ambiente.
+- Dipendenze.
+- Schema del database.
+- Dati condivisi tra utenti.
+- Credenziali necessarie al funzionamento.
+- Funzionalità già implementate.
+
+Se sono presenti dati dimostrativi nel codice, rimuovi o disattiva soltanto quelli che vengono utilizzati per simulare contenuti reali.
+
+Se sono presenti dati degli utenti nel database, non cancellarli globalmente per ottenere una schermata iniziale vuota.
+
+L'obiettivo è inizializzare correttamente l'esperienza utente, non distruggere il progetto.
+
+==================================================
+6. COMPLETA LE FUNZIONALITÀ DI NAVIGAZIONE GIÀ PRESENTI
+==================================================
+
+Esamina come viene gestita attualmente la navigazione e migliora l'implementazione esistente.
+
+Se la navigazione è già integrata, mantienila e correggi eventuali problemi.
+
+Se è soltanto parzialmente implementata, completa le parti mancanti.
+
+Se è assente, aggiungila utilizzando una soluzione compatibile con l'architettura esistente.
+
+L'obiettivo è consentire all'utente di rimanere nell'applicazione durante il viaggio, senza essere obbligato ad aprire Google Maps per completare la navigazione.
+
+La soluzione deve supportare, nei limiti del sistema effettivamente integrato:
+
+- Ricerca della destinazione.
+- Calcolo del percorso.
+- Visualizzazione del percorso sulla mappa.
+- Alternative di viaggio.
+- Distanza e tempo stimato.
+- Informazioni sul traffico.
+- Avvio della navigazione.
+- Indicazioni stradali.
+- Aggiornamento della posizione.
+- Ricalcolo del percorso.
+- Gestione delle restrizioni stradali conosciute.
+- Arrivo alla destinazione.
+- Eventuale proseguimento a piedi.
+
+Prima di introdurre un nuovo SDK, controlla quali servizi vengono già utilizzati e se possono essere estesi.
+
+Valuta Google Navigation SDK quando compatibile con il progetto e con le relative condizioni d'uso.
+
+Se l'applicazione attuale è una web app e non supporta direttamente tutte le funzioni native necessarie, non ricostruirla automaticamente come applicazione nativa.
+
+Valuta prima le possibilità offerte dall'architettura attuale.
+
+Se una modifica importante è indispensabile, documenta perché e implementa soltanto ciò che è necessario, preservando le funzionalità esistenti.
+
+Non presentare una semplice linea disegnata sulla mappa come navigazione completa.
+
+==================================================
+7. MIGLIORA LA GESTIONE DELLE ZTL
+==================================================
+
+Esamina le funzionalità attuali relative alle Zone a Traffico Limitato.
+
+Se esistono già, verifica la qualità dei dati, la rappresentazione sulla mappa e il comportamento durante il calcolo del percorso.
+
+Se sono incomplete, migliorale.
+
+Se mancano, aggiungile in modo coerente con l'architettura esistente.
+
+L'obiettivo è aiutare l'utente a riconoscere le restrizioni e a evitarle quando non può accedervi.
+
+Utilizza, quando disponibili e autorizzati:
+- Fonti ufficiali degli enti competenti.
+- Dataset pubblici.
+- Dati geografici pertinenti.
+- Provider cartografici compatibili.
+- Altre fonti affidabili e documentate.
+
+Considera i confini geografici, gli orari, i giorni di attivazione, le restrizioni applicabili e le eventuali eccezioni documentate.
+
+Distingui tra dati ufficiali, dati complementari, segnalazioni e informazioni non verificate.
+
+Conserva la provenienza e la data di aggiornamento dei dati quando possibile.
+
+Se il sistema di routing supporta restrizioni applicabili alle ZTL, utilizzale durante il calcolo del percorso.
+
+Non considerare automaticamente una zona attraversabile quando le informazioni sono insufficienti.
+
+Non dichiarare di avere una copertura completa quando non è stata verificata.
+
+Non inventare perimetri, orari o permessi di accesso.
+
+Se manca un'integrazione, aggiungi il supporto tecnico necessario senza fingere che il servizio sia già operativo.
+
+==================================================
+8. MIGLIORA GLI AVVISI STRADALI
+==================================================
+
+Esamina gli avvisi stradali già implementati e migliora quelli disponibili.
+
+Valuta il supporto per:
+- Autovelox fissi.
+- Controlli della velocità media.
+- Traffico.
+- Incidenti.
+- Lavori stradali.
+- Chiusure.
+- Pericoli.
+- Altri eventi pertinenti.
+
+Usa fonti realmente accessibili, attendibili e autorizzate.
+
+Valuta le fonti istituzionali italiane, i servizi cartografici già collegati e le eventuali integrazioni autorizzate di provider esterni.
+
+Non presumere di poter recuperare automaticamente tutti i dati di Waze o di altri servizi privati.
+
+Non effettuare scraping non autorizzato e non utilizzare API private.
+
+Se un'integrazione esistente è già operativa, non sostituirla senza una ragione concreta.
+
+Se mancano dati o autorizzazioni, prepara l'integrazione e indica chiaramente cosa occorre configurare.
+
+Gli avvisi devono essere pertinenti al percorso e alla direzione di marcia, quando le informazioni necessarie sono disponibili.
+
+Evita notifiche superflue e distrazioni durante la guida.
+
+Non dichiarare che una segnalazione è ufficiale se la fonte non lo dimostra.
+
+Non mostrare dati inventati come se fossero informazioni in tempo reale.
+
+==================================================
+9. MIGLIORA IL SISTEMA DI RICERCA DEI PARCHEGGI
+==================================================
+
+La ricerca intelligente dei parcheggi è una delle funzionalità più importanti del prodotto.
+
+Esamina il sistema attuale e miglioralo senza duplicare le funzionalità già esistenti.
+
+L'obiettivo è consentire la ricerca di parcheggi:
+- Vicino alla posizione corrente.
+- Vicino alla destinazione.
+- Lungo il percorso.
+- In base al prezzo.
+- In base alla distanza.
+- In base alla tipologia.
+- In base alle caratteristiche del parcheggio.
+
+Quando i dati sono disponibili, considera anche:
+- Disponibilità dei posti.
+- Orari di apertura.
+- Altezza massima.
+- Copertura.
+- Accessibilità.
+- Ricarica elettrica.
+- Modalità di pagamento.
+- Possibilità di prenotazione.
+
+Migliora il sistema di ordinamento in modo che non consideri soltanto la distanza geografica.
+
+Quando possibile, combina tempo di deviazione, distanza a piedi, costo, disponibilità e affidabilità delle informazioni.
+
+Mostra dati reali oppure stime chiaramente identificate.
+
+Non inventare prezzi e disponibilità.
+
+Distingui tra disponibilità verificata in tempo reale, stime e dati non disponibili.
+
+Se un sistema di parcheggio è già presente e funziona, miglioralo senza riscriverlo inutilmente.
+
+Se non esiste, aggiungilo utilizzando le strutture e i servizi già disponibili nell'applicazione.
+
+==================================================
+10. COLLEGA NAVIGAZIONE E PARCHEGGIO
+==================================================
+
+Migliora l'esperienza complessiva del viaggio.
+
+Quando l'utente inserisce una destinazione, l'app dovrebbe aiutarlo, quando tecnicamente possibile, a individuare parcheggi compatibili nelle vicinanze.
+
+Permetti di confrontare le alternative in base a:
+- Tempo di deviazione.
+- Costo.
+- Distanza a piedi.
+- Disponibilità.
+- Restrizioni.
+- Compatibilità con il veicolo.
+
+Quando l'utente seleziona un parcheggio, aggiorna il percorso utilizzando le funzionalità di routing disponibili.
+
+Quando esiste un servizio pedonale compatibile, consenti di raggiungere la destinazione dal parcheggio.
+
+Non limitarti a disegnare una linea tra parcheggio e destinazione: utilizza un vero servizio di calcolo del percorso quando disponibile.
+
+L'obiettivo è ridurre il tempo necessario a raggiungere la destinazione e semplificare il parcheggio.
+
+==================================================
+11. SALVATAGGIO DEL PARCHEGGIO
+==================================================
+
+Controlla se esiste già una funzione per ricordare dove l'utente ha parcheggiato.
+
+Se esiste, migliora il funzionamento dell'implementazione attuale.
+
+Se manca, aggiungila.
+
+L'utente deve poter salvare manualmente la posizione del veicolo e ritrovarla successivamente.
+
+Quando appropriato, consenti di:
+- Visualizzare il punto salvato.
+- Tornare al veicolo.
+- Avviare il percorso pedonale.
+- Inserire note.
+- Salvare l'orario.
+- Impostare un promemoria.
+- Impostare un timer per la sosta.
+
+L'eventuale rilevamento automatico del parcheggio deve essere implementato soltanto se tecnicamente supportato e sufficientemente affidabile.
+
+Non dedurre automaticamente che l'utente abbia parcheggiato soltanto perché il GPS si è interrotto.
+
+==================================================
+12. CONSERVA E MIGLIORA LE INTEGRAZIONI ESISTENTI
+==================================================
+
+Prima di aggiungere nuove API, verifica quelle già utilizzate.
+
+Riutilizza le integrazioni funzionanti e controlla se possono fornire anche i dati richiesti dalle nuove funzionalità.
+
+Valuta nuovi provider soltanto per coprire esigenze realmente non soddisfatte.
+
+Le possibili categorie comprendono:
+- Mappe e navigazione.
+- Ricerca geografica.
+- Calcolo dei percorsi.
+- Traffico.
+- Parcheggi.
+- ZTL.
+- Segnalazioni stradali.
+
+Per ogni nuova integrazione, verifica disponibilità, costi, autenticazione, copertura e condizioni d'uso.
+
+Non esporre credenziali segrete.
+
+Non sostituire chiavi API esistenti con valori fittizi.
+
+Non modificare le configurazioni già funzionanti senza necessità.
+
+Se manca una credenziale, implementa quanto è possibile senza di essa e indica precisamente quale configurazione occorre completare.
+
+==================================================
+13. MIGLIORA LA STRUTTURA TECNICA SOLTANTO QUANDO SERVE
+==================================================
+
+Esamina l'architettura corrente prima di introdurre nuovi componenti.
+
+Se il codice è già organizzato correttamente, conserva la struttura esistente.
+
+Se individui problemi, correggili gradualmente.
+
+Se servono nuovi moduli per le ZTL, i parcheggi o gli avvisi stradali, integrali nell'architettura attuale.
+
+Evita duplicazioni della logica e delle richieste API.
+
+Gestisci correttamente errori, timeout, caricamenti, assenza di dati e connessioni instabili.
+
+Riutilizza lo storage, il database e il sistema di autenticazione esistenti quando sono adeguati.
+
+Non introdurre nuovi servizi backend senza una reale necessità.
+
+Non modificare gli schemi dei dati in modo incompatibile senza verificare le conseguenze.
+
+Mantieni una separazione chiara tra interfaccia, logica applicativa e servizi esterni, nella misura coerente con la struttura attuale.
+
+L'obiettivo non è realizzare un'architettura completamente nuova: è rendere più solida e funzionale quella che esiste.
+
+==================================================
+14. TESTA LE MODIFICHE E PRESERVA LE FUNZIONALITÀ ESISTENTI
+==================================================
+
+Prima di considerare terminato il lavoro, verifica le funzionalità interessate dalle modifiche.
+
+Controlla, quando applicabile:
+- Apertura dell'applicazione.
+- Stato iniziale senza dati dimostrativi.
+- Ricerca manuale.
+- Utilizzo della posizione.
+- Funzionamento della mappa.
+- Navigazione.
+- Gestione delle ZTL.
+- Ricerca dei parcheggi.
+- Avvisi stradali.
+- Gestione degli errori API.
+- Apertura e chiusura dei pannelli.
+- Salvataggio dei dati.
+- Compatibilità con le funzionalità preesistenti.
+
+Esegui i test e i controlli di compilazione effettivamente disponibili.
+
+Correggi gli eventuali errori introdotti dalle modifiche.
+
+Non dichiarare superati test che non hai eseguito.
+
+Non eliminare una funzione preesistente per risolvere un problema se esiste un modo ragionevole per preservarla.
+
+Se una funzionalità richiede credenziali o un servizio non disponibile, distingui chiaramente il completamento del codice dalla verifica del funzionamento reale.
+
+==================================================
+15. ORDINE DI ESECUZIONE OBBLIGATORIO
+==================================================
+
+Segui questo ordine.
+
+FASE 1:
+Analizza l'applicazione attuale e individua componenti, funzionalità e integrazioni esistenti.
+
+FASE 2:
+Confronta lo stato attuale con tutte le richieste contenute nel prompt.
+
+FASE 3:
+Individua i problemi reali e stabilisci quali modifiche siano effettivamente necessarie.
+
+FASE 4:
+Riutilizza il codice valido e correggi le funzionalità esistenti che necessitano di miglioramenti.
+
+FASE 5:
+Aggiungi esclusivamente le funzionalità mancanti, integrandole con quelle già presenti.
+
+FASE 6:
+Migliora la GUI esistente, semplificandola e rendendola più intuitiva, senza sostituire inutilmente l'intera interfaccia.
+
+FASE 7:
+Rimuovi esclusivamente i dati dimostrativi e configura correttamente lo stato iniziale.
+
+FASE 8:
+Esegui i test possibili e correggi i problemi introdotti.
+
+FASE 9:
+Verifica che le funzionalità precedenti siano ancora operative.
+
+FASE 10:
+Riepiloga le modifiche reali e indica eventuali dipendenze esterne ancora da configurare.
+
+Non fermarti dopo le prime fasi: completa anche gli interventi implementabili nel progetto corrente.
+
+==================================================
+16. RISULTATO RICHIESTO
+==================================================
+
+Voglio ottenere una versione migliore dell'applicazione che esiste già, non una nuova applicazione.
+
+Mantieni tutte le funzionalità valide.
+
+Correggi quelle difettose.
+
+Migliora quelle che possono essere rese più efficienti e intuitive.
+
+Aggiungi quelle mancanti.
+
+Semplifica la GUI.
+
+Rimuovi i dati dimostrativi dalla schermata iniziale.
+
+Integra meglio navigazione, ZTL, avvisi stradali e ricerca dei parcheggi.
+
+Conserva le API, le configurazioni e le dipendenze funzionanti.
+
+Non introdurre dati inventati.
+
+Non simulare funzioni che non esistono.
+
+Non cambiare tecnologia senza una necessità concreta.
+
+Non riscrivere componenti funzionanti soltanto per preferenza personale.
+
+Non creare una seconda versione parallela del prodotto.
+
+Non limitarti a produrre un piano di lavoro o un esempio di codice.
+
+APPLICA DIRETTAMENTE LE MODIFICHE AL PROGETTO ESISTENTE.
+
+Al termine, fornisci un riepilogo sintetico che distingua:
+
+1. Funzionalità già esistenti che hai conservato.
+2. Funzionalità esistenti che hai migliorato.
+3. Funzionalità nuove che hai aggiunto.
+4. Problemi che hai corretto.
+5. Test effettivamente eseguiti.
+6. Integrazioni ancora in attesa di API key, credenziali o autorizzazioni.
+7. Eventuali problemi che non hai potuto risolvere nell'architettura attuale.
+
+Non dichiarare una funzionalità completata se hai realizzato soltanto l'interfaccia grafica.
+
+La priorità è ottenere un'applicazione realmente funzionante, mantenibile e migliorata rispetto alla versione precedente.
+
+ISTRUZIONE FINALE, DA RISPETTARE SEMPRE:
+
+NON RICOSTRUIRE IL PROGETTO DA ZERO.
+
+ANALIZZA CIÒ CHE ESISTE, CONFRONTALO CON I REQUISITI, CONSERVA CIÒ CHE FUNZIONA E MODIFICA SOLTANTO QUELLO CHE È NECESSARIO.
+
+SE UNA FUNZIONALITÀ È GIÀ IMPLEMENTATA CORRETTAMENTE, NON RISCRIVERLA.
+
+SE UNA FUNZIONALITÀ È PRESENTE MA DIFETTOSA, CORREGGILA.
+
+SE UNA FUNZIONALITÀ È INCOMPLETA, COMPLETALA.
+
+SE UNA FUNZIONALITÀ MANCA, AGGIUNGILA.
+
+SE UNA FUNZIONALITÀ DIPENDE DA UN SERVIZIO ESTERNO, IMPLEMENTA LA PARTE REALIZZABILE E DICHIARA CHIARAMENTE CIÒ CHE MANCA.
+
+ORA ANALIZZA IL PROGETTO ESISTENTE E PROCEDI CON LE MODIFICHE.

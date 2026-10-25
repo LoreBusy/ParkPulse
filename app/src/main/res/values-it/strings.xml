@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ParkPulse</string>
+    <string name="app_tagline">Parcheggi Intelligenti &amp; Traffico Live nel Mondo</string>
+    
+    <!-- Auth & Login -->
+    <string name="login_welcome_title">Trova Parcheggio Ovunque</string>
+    <string name="login_welcome_subtitle">Disponibilità in tempo reale, mappa termica dinamica ed ETA con traffico live nel mondo.</string>
+    <string name="sign_in_with_google">Accedi con Google</string>
+    <string name="sign_in_with_email">Accedi con Email</string>
+    <string name="continue_as_guest">Continua come Esploratore</string>
+    <string name="email_hint">nome@esempio.com</string>
+    <string name="password_hint">Password (min 6 caratteri)</string>
+    <string name="sign_in_action">Accedi</string>
+    <string name="create_account_action">Crea Account</string>
+    <string name="auth_error_title">Errore di Autenticazione</string>
+    <string name="sign_out">Disconnetti</string>
+    <string name="delete_account">Elimina Account e Dati</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="tab_map">Mappa</string>
+    <string name="tab_list">Elenco</string>
+    <string name="tab_radar">Radar</string>
+    <string name="tab_saved">Salvati</string>
+    <string name="tab_activity">Attività</string>
+
+    <!-- Search & City Selection -->
+    <string name="search_city_hint">Cerca città o via nel mondo…</string>
+    <string name="current_location">Posizione Attuale</string>
+    <string name="selected_city">Città Attiva</string>
+
+    <!-- Filters -->
+    <string name="filter_all">Tutti</string>
+    <string name="filter_free">Stalli Bianchi</string>
+    <string name="filter_paid">Strisce Blu</string>
+    <string name="filter_ev">Colonnine EV</string>
+
+    <!-- Live ETA & Traffic -->
+    <string name="eta_calculating">Calcolo arrivo con traffico live…</string>
+    <string name="eta_arrival_prefix">Arrivo stimato</string>
+    <string name="traffic_smooth">Traffico Scorrevole</string>
+    <string name="traffic_moderate">Traffico Rallentato</string>
+    <string name="traffic_heavy">Forti Ritardi</string>
+    <string name="distance_away">distanza</string>
+    <string name="navigate_action">Naviga</string>
+    <string name="smart_navigate_action">Smart Navigator</string>
+
+    <!-- Heatmap & Overlay -->
+    <string name="heatmap_title">Mappa Termica Densità Sosta (Live)</string>
+    <string name="heatmap_saturation">Densità Saturazione</string>
+    <string name="heatmap_vacancy">Disponibilità Posti</string>
+
+    <!-- Language -->
+    <string name="language_selection">Lingua</string>
+    <string name="lang_english">English (US)</string>
+    <string name="lang_italian">Italiano (IT)</string>
+</resources>

@@ -1,0 +1,6 @@
+{
+  "name": "ParkPulse",
+  "description": "Global smart parking finder with real-time vacancy heatmap, live traffic ETA, multi-city navigation, and community rewards.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

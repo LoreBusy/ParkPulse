@@ -1,0 +1,1083 @@
+AGISCI COME UN TEAM DI SVILUPPO SOFTWARE DI LIVELLO ENTERPRISE.
+
+Assumi contemporaneamente i ruoli di:
+
+- Senior Android Engineer.
+- Senior Full-Stack Developer.
+- Navigation Systems Engineer.
+- GIS e Geospatial Data Engineer.
+- UI/UX Designer specializzato in applicazioni automobilistiche.
+- Esperto di Google Maps Platform, Navigation SDK e sistemi GPS.
+- Backend Architect e API Integration Specialist.
+- Esperto di sicurezza, privacy e ottimizzazione delle prestazioni.
+- Quality Assurance Engineer specializzato in applicazioni mobile.
+
+OBIETTIVO GENERALE
+
+Migliora radicalmente l'applicazione di parcheggio e navigazione già presente in questo progetto.
+
+Non voglio una semplice revisione estetica, un prototipo dimostrativo o una schermata statica.
+
+Voglio trasformare l'applicazione in un prodotto realmente utilizzabile, moderno, intuitivo, veloce, affidabile e progettato per diventare competitivo rispetto alle migliori applicazioni di navigazione e parcheggio presenti sul mercato.
+
+L'obiettivo è integrare in un'unica esperienza:
+
+1. Navigazione automobilistica.
+2. Ricerca intelligente dei parcheggi.
+3. Individuazione e gestione delle ZTL.
+4. Avvisi relativi agli autovelox e ai controlli della velocità.
+5. Informazioni sul traffico e sugli eventi stradali.
+6. Pianificazione del viaggio e scelta del parcheggio.
+7. Informazioni utili prima, durante e dopo la guida.
+8. Un'interfaccia estremamente semplice da utilizzare.
+9. Informazioni geografiche aggiornate, con fonti verificabili.
+10. Un'architettura pronta ad accogliere nuove funzionalità e nuovi fornitori di dati.
+
+Il prodotto deve avere un'identità propria. Non deve limitarsi a copiare Google Maps o Waze: il suo vantaggio distintivo deve essere l'integrazione intelligente tra navigazione, parcheggi e accessibilità delle destinazioni.
+
+IMPORTANTE: lavora sul progetto esistente. Non ricominciare arbitrariamente da zero e non eliminare funzionalità valide senza averne prima verificato l'utilità.
+
+==================================================
+FASE 1 — ANALISI COMPLETA DEL PROGETTO ESISTENTE
+==================================================
+
+Prima di modificare il codice:
+
+1. Esamina tutti i file del progetto.
+2. Individua il framework, il linguaggio e l'architettura utilizzati.
+3. Individua tutte le schermate già implementate.
+4. Esamina i componenti dell'interfaccia.
+5. Verifica il sistema di navigazione tra le schermate.
+6. Individua le API già configurate e le relative integrazioni.
+7. Verifica come vengono gestite la posizione GPS, la ricerca e le mappe.
+8. Esamina database, storage locale, autenticazione e configurazioni.
+9. Individua eventuali dati dimostrativi, coordinate predefinite, segnaposto, destinazioni iniziali e percorsi precaricati.
+10. Individua pulsanti non funzionanti, funzionalità incomplete, errori e dipendenze inutilizzate.
+11. Verifica le eventuali chiavi API e le configurazioni esistenti senza esporre o stampare segreti.
+12. Controlla eventuali problemi di prestazioni, compatibilità e gestione delle autorizzazioni.
+
+Distingui chiaramente tra:
+
+- Funzionalità già funzionanti.
+- Funzionalità implementate solo parzialmente.
+- Funzionalità rappresentate graficamente ma non operative.
+- Funzionalità mancanti.
+- Funzionalità che richiedono servizi o autorizzazioni esterne.
+
+Dopo questa verifica, procedi direttamente con le modifiche.
+
+Non fermarti a una relazione di analisi e non chiedermi di confermare ogni singolo passaggio.
+
+Conserva le parti funzionanti, riutilizza il codice valido e modifica l'architettura soltanto quando è realmente necessario.
+
+==================================================
+FASE 2 — RESET COMPLETO DELL'ESPERIENZA INIZIALE
+==================================================
+
+Questa è una delle mie richieste più importanti.
+
+Voglio che l'applicazione si comporti come un'app appena installata e utilizzata per la prima volta.
+
+Rimuovi tutti i dati dimostrativi o predefiniti che compaiono inutilmente sulla mappa.
+
+In particolare, elimina:
+
+- Parcheggi dimostrativi precaricati.
+- Destinazioni predefinite.
+- Segnaposto inseriti artificialmente.
+- Percorsi di esempio.
+- Ricerche recenti dimostrative.
+- Preferiti dimostrativi.
+- Posizioni di parcheggio salvate artificialmente.
+- Segnalazioni stradali inventate.
+- ZTL o autovelox inseriti soltanto per riempire la mappa.
+- Coordinate fisse utilizzate come sostituti della posizione reale.
+- Qualsiasi contenuto iniziale che faccia sembrare l'applicazione già utilizzata.
+
+Non devono esserci punti aggiunti artificialmente per rendere la schermata più interessante.
+
+Al primo avvio devono esistere soltanto la struttura dell'applicazione, la mappa e le funzionalità realmente disponibili.
+
+Il comportamento iniziale deve essere il seguente:
+
+A. L'utente apre l'applicazione.
+
+B. Visualizza una schermata pulita, con una mappa funzionante e un'interfaccia semplice.
+
+C. Non sono selezionati destinazioni, parcheggi, itinerari o luoghi artificiali.
+
+D. La ricerca è vuota e non contiene risultati precompilati.
+
+E. La cronologia delle ricerche è vuota.
+
+F. I preferiti sono vuoti.
+
+G. Non esiste una posizione di parcheggio salvata.
+
+H. La posizione corrente viene richiesta all'utente e mostrata soltanto quando sono disponibili le autorizzazioni necessarie.
+
+I. L'utente può iniziare immediatamente a cercare una destinazione oppure un parcheggio.
+
+J. Le informazioni stradali vengono recuperate dalle fonti disponibili quando servono, senza inventare risultati.
+
+Non inserire automaticamente segnaposto sulla mappa soltanto perché l'utente non ha ancora effettuato una ricerca.
+
+La mappa deve rimanere realmente funzionante anche quando non sono stati selezionati luoghi o destinazioni.
+
+Se l'utente non concede l'accesso alla posizione, consenti comunque la ricerca manuale degli indirizzi.
+
+IMPORTANTE SULLA PULIZIA DEI DATI:
+
+Rimuovi i dati di esempio e inizializza correttamente un'esperienza utente nuova, ma non cancellare accidentalmente:
+
+- Il codice sorgente.
+- Le chiavi API configurate.
+- Le variabili d'ambiente.
+- Le configurazioni dei servizi.
+- Lo schema del database.
+- Le informazioni necessarie al funzionamento dell'app.
+
+Non eseguire cancellazioni distruttive indiscriminate su database condivisi o su dati appartenenti ad altri utenti.
+
+Se esiste un sistema di autenticazione, separa l'inizializzazione del nuovo profilo dalla cancellazione dei dati globali.
+
+L'obiettivo è avere un'applicazione pulita e senza dati dimostrativi, non danneggiare l'infrastruttura.
+
+==================================================
+FASE 3 — RIPROGETTAZIONE COMPLETA DELLA GUI
+==================================================
+
+Riprogetta radicalmente l'interfaccia grafica.
+
+Voglio un'interfaccia moderna, pulita, premium, intuitiva e utilizzabile con facilità anche quando l'utente ha fretta.
+
+La mappa deve essere il centro dell'esperienza.
+
+Evita interfacce sovraccariche, menu troppo lunghi, decine di pulsanti, schede ingombranti e informazioni che non servono nel momento in cui vengono visualizzate.
+
+PRINCIPIO FONDAMENTALE:
+
+Ogni schermata deve avere una funzione principale evidente.
+
+L'utente non deve chiedersi dove cliccare o quale menu aprire.
+
+SCHERMATA PRINCIPALE
+
+Organizza la schermata attorno ai seguenti elementi:
+
+1. MAPPA CENTRALE
+
+La mappa occupa la maggior parte dello spazio disponibile.
+
+Deve supportare:
+
+- Zoom.
+- Panoramica.
+- Rotazione, se supportata.
+- Posizione corrente.
+- Visualizzazione del percorso selezionato.
+- Visualizzazione selettiva dei parcheggi.
+- Visualizzazione delle informazioni stradali pertinenti.
+- Modalità giorno e notte.
+- Controlli semplici e facilmente accessibili.
+
+All'apertura non devono comparire destinazioni o parcheggi artificiali.
+
+2. BARRA DI RICERCA INTELLIGENTE
+
+Posiziona una barra di ricerca ben visibile nella parte superiore.
+
+Il testo iniziale può essere:
+
+"Dove vuoi andare?"
+
+La ricerca deve consentire di inserire:
+
+- Indirizzi.
+- Città.
+- Località.
+- Nomi di attività commerciali.
+- Luoghi di interesse.
+- Parcheggi.
+- Destinazioni specifiche.
+- Coordinate geografiche, quando utile.
+
+Prevedi suggerimenti intelligenti mentre l'utente scrive, purché supportati da un servizio di ricerca realmente configurato.
+
+Quando la ricerca è vuota, non mostrare risultati inventati.
+
+3. ACCESSO ALLA POSIZIONE CORRENTE
+
+Aggiungi un pulsante dedicato per centrare la mappa sulla posizione corrente.
+
+Gestisci correttamente:
+
+- Permessi mancanti.
+- GPS disattivato.
+- Segnale debole.
+- Posizione non disponibile.
+- Errori del provider di localizzazione.
+
+Mostra messaggi chiari senza bloccare le altre funzionalità.
+
+4. ACCESSO RAPIDO AI PARCHEGGI
+
+Implementa un comando evidente che permetta di cercare parcheggi vicini oppure vicini alla destinazione inserita.
+
+5. CONTROLLI DELLA MAPPA
+
+Raggruppa le funzioni secondarie in un pannello semplice.
+
+Prevedi, quando disponibili:
+
+- Traffico.
+- ZTL.
+- Autovelox e zone di controllo della velocità.
+- Lavori stradali.
+- Chiusure e incidenti.
+- Parcheggi.
+- Stazioni di ricarica elettrica.
+
+La presenza di una funzionalità nell'interfaccia non deve implicare che il relativo servizio sia già collegato.
+
+Se un servizio non è configurato, mostra uno stato chiaro e non dati inventati.
+
+6. NAVIGAZIONE PRINCIPALE
+
+Utilizza una navigazione semplice, coerente e facilmente comprensibile.
+
+Organizza le sezioni necessarie senza moltiplicare inutilmente le schermate.
+
+Le funzioni fondamentali devono essere raggiungibili in pochissimi tocchi.
+
+7. DESIGN SYSTEM
+
+Utilizza un sistema grafico coerente con:
+
+- Tipografia leggibile.
+- Gerarchia visiva chiara.
+- Icone riconoscibili.
+- Contrasto adeguato.
+- Spaziature regolari.
+- Animazioni discrete.
+- Transizioni rapide.
+- Componenti riutilizzabili.
+- Stati di caricamento.
+- Messaggi di errore comprensibili.
+- Tema chiaro e tema scuro.
+
+Utilizza componenti nativi e accessibili, coerenti con la piattaforma.
+
+L'interfaccia durante la guida deve essere ancora più essenziale di quella utilizzata durante la ricerca di un parcheggio.
+
+Evita animazioni decorative, overlay invadenti e controlli che distraggono il conducente.
+
+==================================================
+FASE 4 — NAVIGAZIONE REALE DIRETTAMENTE NELL'APP
+==================================================
+
+Questa funzionalità è fondamentale.
+
+Non voglio che l'applicazione si limiti a mostrare una destinazione per poi aprire Google Maps e trasferire l'utente a un'altra applicazione.
+
+L'obiettivo è consentire all'utente di rimanere nella nostra applicazione durante l'intero viaggio.
+
+Deve essere possibile:
+
+1. Inserire una destinazione.
+2. Ottenere un percorso reale.
+3. Visualizzare le alternative disponibili.
+4. Confrontare durata, distanza e condizioni del traffico.
+5. Valutare eventuali pedaggi e restrizioni disponibili.
+6. Selezionare il percorso desiderato.
+7. Iniziare la navigazione.
+8. Ricevere indicazioni stradali comprensibili.
+9. Ricevere avvisi pertinenti durante il viaggio.
+10. Ricalcolare il percorso quando necessario.
+11. Terminare la navigazione.
+12. Raggiungere il parcheggio e proseguire a piedi, quando supportato.
+
+La navigazione deve essere integrata direttamente nell'interfaccia dell'applicazione.
+
+VALUTA L'UTILIZZO DEL GOOGLE NAVIGATION SDK PER ANDROID.
+
+Se il progetto è un'applicazione Android nativa compatibile, verifica la possibilità di utilizzare il Navigation SDK per integrare la navigazione turn-by-turn.
+
+Utilizza le funzionalità effettivamente disponibili nel servizio, comprese quelle relative alle istruzioni vocali e agli aggiornamenti del percorso.
+
+Personalizza l'esperienza secondo l'identità grafica della nostra applicazione, senza compromettere le informazioni fondamentali per la guida.
+
+ATTENZIONE:
+
+Verifica la compatibilità con l'architettura esistente, i requisiti tecnici e le condizioni di utilizzo del servizio.
+
+Il Navigation SDK non deve essere combinato arbitrariamente con componenti incompatibili.
+
+Verifica inoltre le condizioni commerciali e le eventuali autorizzazioni necessarie per un prodotto con questo posizionamento.
+
+Se Google richiede un'autorizzazione specifica per il nostro caso d'uso, non aggirare tale requisito.
+
+Valuta un provider alternativo con condizioni di utilizzo compatibili, se necessario.
+
+Non fingere di aver implementato la navigazione soltanto perché compare una linea sulla mappa.
+
+Una navigazione realmente operativa deve ricevere dati validi, gestire la posizione dell'utente e fornire indicazioni coerenti.
+
+Se il progetto attuale è esclusivamente web e non supporta una navigazione mobile nativa completa, non dichiarare implementate funzionalità native che non possono funzionare nell'architettura esistente.
+
+In tal caso, implementa quanto realmente supportato e documenta precisamente gli interventi necessari per ottenere la navigazione completa su Android.
+
+==================================================
+FASE 5 — ROUTING INTELLIGENTE E GESTIONE DELLE ZTL
+==================================================
+
+Le Zone a Traffico Limitato devono costituire una delle funzionalità prioritarie del prodotto.
+
+L'app deve aiutare concretamente l'automobilista a evitare di entrare accidentalmente in zone nelle quali non può circolare.
+
+Non voglio una semplice collezione di segnaposto denominati ZTL.
+
+Voglio un sistema di informazioni geografiche utilizzabile per pianificare un percorso.
+
+Quando disponibili, i dati devono consentire di conoscere:
+
+- La posizione geografica della zona.
+- Il perimetro della zona.
+- Le strade interessate.
+- Gli orari di attivazione.
+- I giorni della settimana.
+- Le eventuali date particolari.
+- Le categorie di veicoli interessate.
+- Le limitazioni ambientali.
+- Le deroghe documentate.
+- Le eventuali eccezioni per determinate categorie.
+- La fonte dell'informazione.
+- La data dell'ultimo aggiornamento.
+- Il livello di affidabilità del dato.
+
+Integra i dati ufficiali pubblicati dagli enti competenti, quando tecnicamente disponibili e utilizzabili.
+
+Utilizza eventuali dataset open data dei comuni e dei gestori della viabilità.
+
+Puoi utilizzare OpenStreetMap e altri provider come fonti complementari, rispettando le relative licenze e attribuzioni.
+
+Non trattare una fonte collaborativa come automaticamente equivalente a una comunicazione ufficiale dell'ente competente.
+
+IMPOSTAZIONE PREDEFINITA:
+
+L'evitamento delle ZTL deve essere attivo durante il calcolo del percorso, quando il servizio di routing permette di applicare restrizioni affidabili.
+
+L'utente deve poter configurare le proprie preferenze.
+
+Quando una zona non è attraversabile secondo i dati disponibili, cerca un percorso alternativo compatibile con le restrizioni conosciute.
+
+Considera, quando supportato, l'ora effettiva di percorrenza e non soltanto l'orario in cui il viaggio viene pianificato.
+
+Se il sistema non dispone di informazioni sufficienti per stabilire se una zona sarà accessibile, mostra un avviso chiaro.
+
+Non dichiarare mai che una strada sia sicuramente libera da restrizioni quando il dato non è disponibile o verificabile.
+
+Non presentare l'app come una garanzia assoluta contro multe o violazioni.
+
+L'obiettivo è prevenire gli ingressi non consentiti, non aggirare controlli o autorizzazioni.
+
+PREVEDI UN SISTEMA DI VERIFICA DEI DATI.
+
+Distingui almeno tra:
+
+- Dato proveniente da una fonte ufficiale.
+- Dato proveniente da una fonte complementare.
+- Dato segnalato dalla comunità.
+- Dato non verificato.
+- Dato scaduto o potenzialmente obsoleto.
+
+Ogni categoria deve essere rappresentata correttamente nell'interfaccia.
+
+Implementa una struttura dati che consenta di aggiungere nuove città, comuni e zone senza dover modificare ogni volta il codice della mappa.
+
+L'obiettivo è predisporre l'app a una copertura geografica progressivamente più ampia.
+
+Non simulare una copertura nazionale completa se non è stata effettivamente realizzata e verificata.
+
+==================================================
+FASE 6 — AUTOVELOX, TUTOR E SEGNALAZIONI STRADALI
+==================================================
+
+Implementa un sistema di avvisi stradali progettato per assistere il conducente.
+
+Quando esistono dati attendibili, l'app deve poter segnalare:
+
+- Autovelox fissi.
+- Dispositivi mobili, quando la posizione è supportata da una fonte attendibile.
+- Sistemi di rilevamento della velocità media.
+- Limiti di velocità disponibili tramite fonti autorizzate.
+- Incidenti.
+- Code.
+- Lavori stradali.
+- Chiusure temporanee.
+- Pericoli e ostacoli.
+- Eventi che possono influenzare il percorso.
+
+Le notifiche devono essere pertinenti rispetto al percorso e alla direzione di marcia.
+
+Non basta che un dispositivo si trovi genericamente nelle vicinanze: quando i dati sono disponibili, valuta la direzione della strada, il senso di percorrenza e la posizione effettiva del dispositivo.
+
+AUTOVELOX IN ITALIA
+
+Valuta come fonte prioritaria il registro nazionale pubblicato dal Ministero delle Infrastrutture e dei Trasporti.
+
+Prima di integrarlo, verifica la disponibilità effettiva di un dataset, di un'API documentata o di un'altra modalità autorizzata di accesso ai dati.
+
+Non presumere che una pagina web consultabile offra automaticamente un'API pubblica.
+
+Se il registro non offre un'interfaccia direttamente utilizzabile, prepara un sistema di importazione aggiornabile e documenta la procedura corretta.
+
+Non inventare coordinate e non classificare come ufficiale un dato proveniente da una fonte non ufficiale.
+
+Mantieni separati:
+
+- Dispositivi presenti nel registro ufficiale.
+- Segnalazioni della comunità.
+- Informazioni provenienti da provider autorizzati.
+- Informazioni la cui validità deve ancora essere verificata.
+
+Le informazioni possono cambiare nel tempo. Registra la data dell'ultimo aggiornamento e gestisci correttamente i dati non più recenti.
+
+AVVISI DURANTE LA GUIDA
+
+Quando la posizione del conducente e i dati del percorso lo consentono, implementa:
+
+- Avviso visivo essenziale.
+- Avviso vocale.
+- Avviso sonoro configurabile.
+- Distanza approssimativa dall'evento.
+- Indicazione comprensibile della natura dell'evento.
+
+Gli avvisi devono aiutare a mantenere una condotta di guida sicura.
+
+Non creare notifiche continuamente ripetute o allarmi che distraggano il conducente.
+
+Consenti di configurare le categorie di avvisi, rispettando le impostazioni di sicurezza.
+
+INTEGRAZIONE CON WAZE
+
+Valuta le integrazioni ufficialmente disponibili con Waze.
+
+Non effettuare scraping delle sue pagine, non utilizzare API private non autorizzate e non presumere che esista un endpoint pubblico che consenta di scaricare tutte le segnalazioni in tempo reale dell'applicazione.
+
+Se per accedere ai dati è necessario un accordo o un accesso partner, indicane esplicitamente il requisito.
+
+Nel frattempo, prevedi un'architettura modulare che permetta di utilizzare altre fonti autorizzate.
+
+Non dichiarare che i dati provengono da Waze quando non esiste una connessione effettiva.
+
+==================================================
+FASE 7 — IL RADAR INTELLIGENTE PER I PARCHEGGI
+==================================================
+
+Il parcheggio deve diventare il principale elemento distintivo dell'applicazione.
+
+Non voglio soltanto un pulsante che apre una lista di parcheggi.
+
+Voglio un sistema che aiuti l'utente a individuare il parcheggio più adatto alla destinazione e a completare il viaggio nel modo più conveniente.
+
+L'utente deve poter scegliere se cercare:
+
+A. Parcheggi vicini alla posizione corrente.
+
+B. Parcheggi vicini alla destinazione finale.
+
+C. Parcheggi lungo il percorso.
+
+D. Parcheggi che riducono al minimo il tempo complessivo di viaggio.
+
+E. Parcheggi in base a prezzo, distanza o altre preferenze.
+
+Quando l'utente inserisce una destinazione, considera la possibilità di proporre automaticamente parcheggi compatibili nelle vicinanze, senza riempire la schermata iniziale prima che esista una ricerca.
+
+TIPOLOGIE DI PARCHEGGIO
+
+Prevedi il supporto, nei limiti delle fonti disponibili, per:
+
+- Parcheggi pubblici.
+- Autorimesse private.
+- Parcheggi a pagamento su strada.
+- Parcheggi gratuiti documentati.
+- Parcheggi con prenotazione.
+- Parcheggi con posti per persone con disabilità.
+- Parcheggi con ricarica per veicoli elettrici.
+- Parcheggi coperti.
+- Parcheggi con limiti dimensionali.
+- Altre categorie utili supportate dai provider.
+
+FILTRI
+
+Consenti di filtrare i risultati in base a:
+
+- Distanza dalla destinazione.
+- Tempo di deviazione dal percorso.
+- Prezzo.
+- Disponibilità di posti.
+- Orari di apertura.
+- Tipo di parcheggio.
+- Accessibilità.
+- Altezza massima consentita.
+- Copertura.
+- Ricarica elettrica.
+- Modalità di pagamento.
+- Altre caratteristiche effettivamente disponibili nei dati.
+
+ORDINAMENTO INTELLIGENTE
+
+Non ordinare necessariamente i parcheggi soltanto per distanza geografica.
+
+Considera un punteggio che combini, quando le informazioni sono disponibili:
+
+- Tempo necessario per raggiungere il parcheggio.
+- Tempo di deviazione dalla rotta.
+- Distanza a piedi dalla destinazione.
+- Prezzo previsto.
+- Disponibilità attuale dei posti.
+- Affidabilità dell'informazione.
+- Compatibilità con il veicolo.
+- Eventuali restrizioni di accesso.
+
+Mostra in modo comprensibile perché un parcheggio viene consigliato.
+
+Esempio concettuale:
+
+"Consigliato: 4 minuti di deviazione, 3 minuti a piedi dalla destinazione, tariffa disponibile".
+
+Usa questi valori soltanto se provengono da calcoli o informazioni reali.
+
+Non inventare prezzi, distanze e tempi.
+
+DISPONIBILITÀ DEI POSTI
+
+Distingui con precisione tra:
+
+- Disponibilità in tempo reale verificata.
+- Disponibilità comunicata da un operatore.
+- Stima.
+- Informazione non disponibile.
+
+Non dichiarare che esiste un posto libero se il provider non fornisce tale informazione.
+
+Se un parcheggio non dispone di dati in tempo reale, deve comunque essere possibile mostrarlo come parcheggio conosciuto, indicando i limiti dell'informazione.
+
+PRENOTAZIONE
+
+Se il parcheggio offre un sistema di prenotazione tramite API o integrazione autorizzata, valuta la possibilità di prenotare direttamente.
+
+Altrimenti mostra il collegamento ufficiale o le informazioni per completare la prenotazione.
+
+Non simulare prenotazioni riuscite.
+
+==================================================
+FASE 8 — DAL PARCHEGGIO ALLA DESTINAZIONE
+==================================================
+
+Un vantaggio importante deve essere la gestione dell'intero tragitto, non soltanto del viaggio in automobile.
+
+Quando un utente seleziona una destinazione:
+
+1. Calcola il percorso automobilistico.
+2. Individua i parcheggi compatibili nelle vicinanze.
+3. Permetti di confrontare le alternative.
+4. Calcola il tragitto verso il parcheggio selezionato.
+5. Quando supportato, mostra il percorso pedonale dal parcheggio alla destinazione.
+6. Indica chiaramente quanto tempo e quale distanza rimangono a piedi.
+
+Questo permette di scegliere un parcheggio che sia realmente conveniente e non soltanto il più vicino in linea d'aria.
+
+Una destinazione con un parcheggio leggermente più distante può essere preferibile se evita una deviazione significativa, riduce il costo o aumenta la probabilità di trovare posto.
+
+La valutazione deve essere trasparente e basata su dati disponibili.
+
+==================================================
+FASE 9 — FUNZIONE "DOVE HO PARCHEGGIATO?"
+==================================================
+
+Implementa un sistema semplice per ricordare il luogo in cui l'utente ha parcheggiato.
+
+Prevedi due modalità:
+
+MODALITÀ MANUALE
+
+L'utente può toccare un comando del tipo:
+
+"Ho parcheggiato qui".
+
+L'app salva la posizione effettiva, se disponibile, ed eventualmente altre informazioni inserite dall'utente.
+
+MODALITÀ ASSISTITA
+
+Quando supportato e autorizzato, il sistema può rilevare una possibile conclusione del viaggio e proporre all'utente di salvare il parcheggio.
+
+Non considerare automaticamente ogni interruzione del GPS come un parcheggio.
+
+Mostra una conferma quando necessario.
+
+Dopo aver parcheggiato, consenti di:
+
+- Visualizzare la posizione salvata.
+- Tornare al punto dell'auto.
+- Avviare la navigazione pedonale.
+- Inserire note.
+- Salvare l'orario.
+- Impostare un promemoria.
+- Impostare un eventuale timer per la sosta.
+
+La cancellazione del parcheggio salvato deve essere semplice e immediata.
+
+Non conservare inutilmente la cronologia dettagliata degli spostamenti.
+
+==================================================
+FASE 10 — INFORMAZIONI STRADALI E FONTI ESTERNE
+==================================================
+
+L'app deve essere predisposta per integrare fonti differenti, senza dipendere rigidamente da un unico fornitore.
+
+Valuta le fonti in funzione della loro reale disponibilità, affidabilità, copertura geografica, costo e licenza.
+
+Categorie da considerare:
+
+- Google Maps Platform.
+- Google Routes API.
+- Google Navigation SDK, quando compatibile e autorizzato.
+- OpenStreetMap.
+- Dataset open data delle amministrazioni pubbliche.
+- Fonti istituzionali sulla viabilità.
+- Servizi autorizzati per traffico e incidenti.
+- Provider specializzati nella ricerca dei parcheggi.
+- Servizi autorizzati per la disponibilità dei posti.
+- Waze, esclusivamente attraverso modalità di accesso realmente consentite.
+- Altre fonti affidabili disponibili sul mercato.
+
+Non integrare indiscriminatamente qualsiasi sito trovato online.
+
+La qualità dei dati deve avere la priorità sul numero delle fonti.
+
+Per ogni integrazione, verifica:
+
+- Disponibilità dell'API.
+- Requisiti di autenticazione.
+- Costi.
+- Limiti di utilizzo.
+- Copertura geografica.
+- Frequenza degli aggiornamenti.
+- Licenza e condizioni di utilizzo.
+- Attribuzione richiesta.
+- Possibilità di utilizzare i dati in un prodotto commerciale.
+
+Non riutilizzare, conservare o combinare dati in violazione delle condizioni del relativo provider.
+
+Non effettuare scraping quando non autorizzato.
+
+Non esporre API key non protette nel codice pubblico.
+
+Non inventare connessioni a servizi esterni.
+
+Se un provider non è disponibile, prevedi un'interfaccia che consenta di collegarlo successivamente.
+
+Se possibile, implementa un sistema di fallback basato su fonti alternative realmente configurate.
+
+==================================================
+FASE 11 — IMPOSTAZIONI PERSONALI DEL CONDUCENTE
+==================================================
+
+L'utente deve poter configurare l'applicazione secondo le proprie necessità.
+
+Prevedi una schermata impostazioni semplice, senza trasformarla in un pannello tecnico.
+
+Le impostazioni dovrebbero comprendere:
+
+NAVIGAZIONE
+
+- Evita ZTL.
+- Preferenze sui pedaggi.
+- Preferenze sul tipo di percorso.
+- Preferenze vocali.
+- Volume degli avvisi.
+- Modalità giorno/notte.
+- Preferenze di visualizzazione della mappa.
+
+AVVISI
+
+- Autovelox.
+- Controlli della velocità media.
+- Incidenti.
+- Traffico.
+- Lavori.
+- Chiusure.
+- Altri eventi supportati.
+
+PARCHEGGI
+
+- Distanza massima dalla destinazione.
+- Preferenza per parcheggi economici.
+- Preferenza per parcheggi coperti.
+- Preferenza per parcheggi con disponibilità verificata.
+- Eventuali esigenze relative al veicolo.
+
+VEICOLO
+
+Consenti di inserire soltanto le informazioni necessarie alle funzionalità desiderate.
+
+Per esempio:
+
+- Tipologia del veicolo.
+- Alimentazione.
+- Classe ambientale, quando conosciuta.
+- Eventuali dimensioni rilevanti per i parcheggi.
+
+La targa e altre informazioni personali devono essere facoltative e richieste soltanto quando realmente necessarie.
+
+Tratta i dati personali con particolare attenzione e non memorizzarli inutilmente.
+
+IMPORTAZIONE DELLE PREFERENZE
+
+Non presumere di poter accedere automaticamente alle impostazioni private dell'account Google Maps.
+
+Implementa preferenze equivalenti all'interno della nostra applicazione.
+
+Se utile, valuta anche l'esportazione e l'importazione delle impostazioni supportate attraverso un formato controllato, come JSON.
+
+Tutte le impostazioni devono avere un comportamento reale e verificabile.
+
+Non aggiungere interruttori decorativi che non modificano il comportamento dell'app.
+
+==================================================
+FASE 12 — ARCHITETTURA TECNICA E GESTIONE DEI DATI
+==================================================
+
+Organizza il codice in componenti riutilizzabili e separa le responsabilità.
+
+Evita di collocare tutta la logica dell'applicazione in un unico componente o file.
+
+Quando coerente con il progetto esistente, separa:
+
+- Interfaccia utente.
+- Logica di navigazione.
+- Motore di ricerca.
+- Gestione dei parcheggi.
+- Gestione delle ZTL.
+- Sistema di segnalazioni.
+- Localizzazione.
+- Integrazioni esterne.
+- Storage locale.
+- Backend.
+- Configurazione.
+- Gestione degli errori.
+- Test.
+
+Crea interfacce indipendenti dai singoli provider.
+
+Esempio concettuale:
+
+ParkingDataProvider
+TrafficDataProvider
+ZtlDataProvider
+SpeedCameraDataProvider
+RoutingProvider
+GeocodingProvider
+
+Ogni provider deve dichiarare quali funzionalità supporta realmente.
+
+Questo permette di sostituire un fornitore o aggiungerne uno nuovo senza riscrivere l'intera applicazione.
+
+DATI GEOGRAFICI
+
+Definisci strutture coerenti per:
+
+- Parcheggi.
+- Zone ZTL.
+- Dispositivi di controllo della velocità.
+- Incidenti.
+- Lavori stradali.
+- Chiusure.
+- Segnalazioni.
+- Destinazioni.
+- Percorsi.
+
+Quando pertinenti, registra:
+
+- Coordinate.
+- Fonte.
+- Data di aggiornamento.
+- Livello di affidabilità.
+- Stato del dato.
+- Eventuale scadenza.
+- Direzione di marcia.
+- Condizioni di validità temporale.
+
+Usa un sistema di coordinate coerente con i provider integrati.
+
+Non utilizzare dati vecchi come se fossero in tempo reale.
+
+CACHING
+
+Implementa una gestione intelligente delle richieste e della cache, nel rispetto delle condizioni d'uso dei provider.
+
+Riduci le richieste duplicate.
+
+Prevedi timeout, retry con limiti, gestione delle risposte incomplete e fallback.
+
+Non mettere in cache dati quando la licenza o il provider lo vietano.
+
+SICUREZZA
+
+Le credenziali segrete dei servizi devono restare nell'ambiente appropriato e non essere esposte nei log o nel repository.
+
+Quando una chiave deve necessariamente essere utilizzata da un SDK client, applica le restrizioni previste dal provider: applicazione, firma, API autorizzate, quote e ambiente.
+
+Per le chiamate backend utilizza credenziali protette.
+
+Non inserire chiavi fittizie fingendo che siano reali.
+
+Se manca una credenziale indispensabile, mostra chiaramente quale integrazione deve essere configurata.
+
+Non bloccare le funzionalità indipendenti da quella credenziale.
+
+==================================================
+FASE 13 — PRESTAZIONI, AFFIDABILITÀ E PRIVACY
+==================================================
+
+L'app deve essere progettata per un utilizzo reale durante gli spostamenti.
+
+Ottimizza:
+
+- Tempo di avvio.
+- Tempo di apertura della mappa.
+- Velocità di ricerca.
+- Reattività dell'interfaccia.
+- Consumo della batteria.
+- Utilizzo del GPS.
+- Numero delle richieste di rete.
+- Gestione della memoria.
+- Aggiornamento della posizione.
+- Funzionamento con connessioni instabili.
+
+Richiedi le autorizzazioni di Android soltanto quando servono e spiega chiaramente il motivo.
+
+La ricerca manuale deve funzionare anche senza il permesso di localizzazione.
+
+La navigazione deve gestire correttamente gli stati di background e le autorizzazioni necessarie, se supportati dal progetto.
+
+Non registrare continuamente la posizione dell'utente quando non è necessario.
+
+Prevedi una gestione trasparente della cronologia e un modo semplice per cancellare i dati salvati.
+
+Se la rete si interrompe, mostra lo stato effettivo del servizio.
+
+Non promettere aggiornamenti in tempo reale quando la connessione o il provider non li consentono.
+
+L'eventuale modalità offline deve essere implementata soltanto nei limiti consentiti dalle licenze e dalle capacità tecniche dei servizi utilizzati.
+
+==================================================
+FASE 14 — COMPORTAMENTO INTELLIGENTE E AUTOMAZIONI
+==================================================
+
+Introduci automazioni che riducano il numero di operazioni richieste all'utente.
+
+Esempi:
+
+1. Quando viene inserita una destinazione, proponi la ricerca dei parcheggi compatibili.
+
+2. Quando viene selezionato un parcheggio, aggiorna il percorso.
+
+3. Quando cambiano le condizioni del traffico e il servizio di routing fornisce un aggiornamento, valuta la necessità di ricalcolare il tragitto.
+
+4. Quando si avvicina una restrizione stradale conosciuta, mostra un avviso pertinente.
+
+5. Quando il viaggio termina, proponi di salvare il parcheggio, se appropriato.
+
+6. Quando il parcheggio è stato salvato, consenti di tornare facilmente al veicolo.
+
+7. Quando il provider di una funzione non è disponibile, non bloccare l'intera applicazione.
+
+Le automazioni devono dipendere da eventi reali e da condizioni verificabili.
+
+Non generare dati artificiali per simulare l'intelligenza dell'applicazione.
+
+Ogni suggerimento deve avere uno scopo concreto e non deve interrompere inutilmente l'esperienza dell'utente.
+
+==================================================
+FASE 15 — DIFFERENZIAZIONE RISPETTO AI CONCORRENTI
+==================================================
+
+Progetta il prodotto intorno a un concetto centrale:
+
+"Portare l'automobilista a destinazione, aiutandolo a trovare un parcheggio adatto e a completare il viaggio nel modo più semplice possibile".
+
+La semplice presenza di una mappa non costituisce un vantaggio competitivo.
+
+Le funzionalità distintive devono derivare dalla combinazione di:
+
+- Percorso stradale.
+- Restrizioni di accesso.
+- Disponibilità e caratteristiche del parcheggio.
+- Costo.
+- Tempo di deviazione.
+- Tempo a piedi.
+- Affidabilità delle informazioni.
+- Preferenze del conducente.
+
+Quando una destinazione presenta più parcheggi possibili, aiuta a scegliere quello complessivamente più conveniente.
+
+Non limitarti a mostrare il parcheggio più vicino.
+
+Cerca di minimizzare il costo totale del viaggio, considerando quando possibile:
+
+- Tempo di guida aggiuntivo.
+- Tempo per cercare posto.
+- Prezzo della sosta.
+- Distanza a piedi.
+- Restrizioni stradali.
+- Probabilità di disponibilità, se stimabile con dati appropriati.
+
+Distingui sempre le misurazioni reali dalle stime.
+
+Progetta un'architettura che possa successivamente accogliere nuove funzionalità senza richiedere una riscrittura completa.
+
+==================================================
+FASE 16 — TEST E VERIFICA DELLE FUNZIONALITÀ
+==================================================
+
+Dopo aver apportato le modifiche, verifica che il progetto continui a compilare e funzionare.
+
+Non considerare terminato il lavoro soltanto perché il codice è stato generato.
+
+Esegui i controlli realmente disponibili nell'ambiente.
+
+Verifica almeno i seguenti scenari:
+
+TEST 1 — PRIMO AVVIO
+
+Una nuova installazione non mostra parcheggi, destinazioni, percorsi o segnalazioni dimostrative.
+
+TEST 2 — POSIZIONE NON AUTORIZZATA
+
+L'app continua a permettere la ricerca manuale.
+
+TEST 3 — RICERCA DESTINAZIONE
+
+La ricerca restituisce risultati provenienti dal provider configurato.
+
+TEST 4 — NAVIGAZIONE
+
+Un percorso valido può essere selezionato e avviato attraverso il sistema effettivamente integrato.
+
+TEST 5 — ZTL
+
+Il sistema applica le restrizioni conosciute secondo i dati disponibili e non dichiara sicuri i tratti non verificati.
+
+TEST 6 — AUTOVELOX
+
+Gli avvisi provengono da fonti configurate e mantengono le informazioni sulla relativa affidabilità.
+
+TEST 7 — PARCHEGGI
+
+I risultati non contengono parcheggi inventati presentati come reali.
+
+TEST 8 — DISPONIBILITÀ
+
+Un parcheggio privo di dati aggiornati non viene presentato come sicuramente libero.
+
+TEST 9 — ERRORI API
+
+L'app gestisce correttamente errori di rete, credenziali mancanti e risposte non valide.
+
+TEST 10 — SICUREZZA
+
+Le chiavi segrete non vengono esposte e le richieste rispettano le restrizioni dei servizi.
+
+TEST 11 — INTERFACCIA
+
+I comandi principali sono raggiungibili facilmente e funzionano realmente.
+
+TEST 12 — CICLO DI VITA
+
+La gestione della posizione e della navigazione non produce richieste inutili, perdite di memoria o comportamenti incoerenti.
+
+TEST 13 — ACCESSIBILITÀ
+
+Testa leggibilità, dimensioni dei controlli, contrasto e utilizzo durante la guida.
+
+TEST 14 — BUILD
+
+Esegui i controlli di compilazione e correggi gli errori introdotti dalle modifiche.
+
+Se un test non può essere eseguito nell'ambiente disponibile, segnalalo esplicitamente.
+
+Non dichiarare superato un test che non hai eseguito.
+
+==================================================
+FASE 17 — RISULTATO FINALE RICHIESTO
+==================================================
+
+Voglio che tu apporti concretamente le modifiche al progetto esistente.
+
+Non limitarti a descrivere come potrei realizzarle.
+
+Non sostituire l'applicazione con un semplice mockup.
+
+Non lasciare pulsanti che non fanno nulla.
+
+Non utilizzare dati inventati per simulare API funzionanti.
+
+Non dichiarare completate integrazioni che richiedono credenziali, autorizzazioni o servizi non disponibili.
+
+Se una funzionalità dipende da un servizio esterno non configurato, implementa quanto possibile, prepara l'integrazione e indica chiaramente che cosa manca.
+
+Dopo aver completato il lavoro:
+
+1. Verifica l'interfaccia risultante.
+2. Verifica il codice modificato.
+3. Esegui la compilazione e i test disponibili.
+4. Correggi gli errori riscontrati.
+5. Verifica che le funzionalità preesistenti valide non siano state danneggiate.
+6. Riassumi le modifiche apportate.
+7. Elenca le integrazioni realmente funzionanti.
+8. Elenca quelle ancora da configurare.
+9. Indica le API key o le autorizzazioni realmente necessarie, senza esporre segreti.
+10. Specifica eventuali costi dei servizi esterni che devono essere verificati prima dell'utilizzo in produzione.
+
+Assegna a ogni funzionalità uno dei seguenti stati:
+
+- COMPLETATA E VERIFICATA.
+- IMPLEMENTATA, MA NON VERIFICATA COMPLETAMENTE.
+- IN ATTESA DI CREDENZIALI O AUTORIZZAZIONI.
+- NON IMPLEMENTABILE NELL'ARCHITETTURA ATTUALE SENZA MODIFICHE ULTERIORI.
+
+L'OBIETTIVO FINALE
+
+Voglio una base software seria, modulare e affidabile per un'app di navigazione e parcheggio.
+
+L'interfaccia deve essere molto più semplice e intuitiva.
+
+L'esperienza iniziale deve essere completamente pulita, senza punti o dati dimostrativi.
+
+La mappa deve rimanere utilizzabile.
+
+Le funzionalità devono essere reali, non soltanto visibili graficamente.
+
+Le ZTL e gli altri vincoli devono essere trattati come informazioni importanti per la pianificazione dei percorsi.
+
+Il sistema dei parcheggi deve diventare il principale elemento distintivo del prodotto.
+
+La navigazione deve rimanere nell'app, quando supportata dall'architettura e dai servizi integrati.
+
+L'applicazione deve essere pronta a crescere con nuove fonti di dati, nuove città e nuove funzionalità.
+
+PRIORITÀ ASSOLUTA:
+
+QUALITÀ DEL PRODOTTO REALE > FUNZIONALITÀ FINTE.
+
+AFFIDABILITÀ DEI DATI > QUANTITÀ DI SEGNAPOSTO.
+
+SEMPLICITÀ D'USO > COMPLESSITÀ DELL'INTERFACCIA.
+
+ARCHITETTURA CORRETTA > SOLUZIONI IMPROVVISATE.
+
+PROCEDI ANALIZZANDO IL PROGETTO ATTUALE E IMPLEMENTANDO LE MIGLIORIE.

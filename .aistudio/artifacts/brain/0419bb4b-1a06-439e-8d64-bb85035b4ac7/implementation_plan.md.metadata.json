@@ -1,0 +1,6 @@
+{
+  "summary": "Implementation plan for Parcheggi Roma (Termini–Esquilino) MVP. Outlines native Jetpack Compose architecture, multi-mode visualization (Interactive Micro-Area Map, Street List View, Radar Density), 5-minute departure signaling with community feedback, Roman ZTL and parking hazard intelligence powered by Gemini, and privacy-first local/cloud persistence.",
+  "updatedAt": "2026-10-13T17:10:12.467951164Z",
+  "requestFeedback": true,
+  "userFacing": true
+}

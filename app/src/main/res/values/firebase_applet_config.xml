@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<resources>
+    <string name="firestore_database_id" translatable="false">ai-studio-android-parchegg-0419bb4b-1a06-439e-8d64-bb85035b4ac7</string>
+    <string name="recaptcha_site_key" translatable="false">6LfBAvstAAAAACiXAsecN7GFyh6GhG4FnOLz3gcw</string>
+</resources>

@@ -1,0 +1,56 @@
+<resources>
+    <string name="app_name">ParkPulse</string>
+    <string name="app_tagline">Global Smart Parking &amp; Live Traffic</string>
+    
+    <!-- Auth & Login -->
+    <string name="login_welcome_title">Find Parking Anywhere</string>
+    <string name="login_welcome_subtitle">Real-time availability, dynamic heatmap, and live traffic ETA worldwide.</string>
+    <string name="sign_in_with_google">Sign in with Google</string>
+    <string name="sign_in_with_email">Sign in with Email</string>
+    <string name="continue_as_guest">Continue as Explorer</string>
+    <string name="email_hint">name@example.com</string>
+    <string name="password_hint">Password (min 6 characters)</string>
+    <string name="sign_in_action">Sign In</string>
+    <string name="create_account_action">Create Account</string>
+    <string name="auth_error_title">Authentication Error</string>
+    <string name="sign_out">Sign Out</string>
+    <string name="delete_account">Delete Account &amp; Data</string>
+    
+    <!-- Navigation Tabs -->
+    <string name="tab_map">Map</string>
+    <string name="tab_list">List</string>
+    <string name="tab_radar">Radar</string>
+    <string name="tab_saved">Saved</string>
+    <string name="tab_activity">Activity</string>
+
+    <!-- Search & City Selection -->
+    <string name="search_city_hint">Search city or address worldwide…</string>
+    <string name="current_location">Current Location</string>
+    <string name="selected_city">Active City</string>
+
+    <!-- Filters -->
+    <string name="filter_all">All</string>
+    <string name="filter_free">Free Spots</string>
+    <string name="filter_paid">Metered</string>
+    <string name="filter_ev">EV Charging</string>
+
+    <!-- Live ETA & Traffic -->
+    <string name="eta_calculating">Calculating live traffic ETA…</string>
+    <string name="eta_arrival_prefix">Arrive by</string>
+    <string name="traffic_smooth">Smooth Traffic</string>
+    <string name="traffic_moderate">Moderate Traffic</string>
+    <string name="traffic_heavy">Heavy Delays</string>
+    <string name="distance_away">away</string>
+    <string name="navigate_action">Navigate</string>
+    <string name="smart_navigate_action">Smart Navigator</string>
+
+    <!-- Heatmap & Overlay -->
+    <string name="heatmap_title">Parking Density Heatmap (Live)</string>
+    <string name="heatmap_saturation">Saturation Density</string>
+    <string name="heatmap_vacancy">Spot Vacancy</string>
+
+    <!-- Language -->
+    <string name="language_selection">Language</string>
+    <string name="lang_english">English (US)</string>
+    <string name="lang_italian">Italiano (IT)</string>
+</resources>

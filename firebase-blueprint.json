@@ -1,0 +1,224 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "Represents a registered global user profile storing preferences, rewards, and vehicle data.",
+      "type": "object",
+      "properties": {
+        "userId": {
+          "type": "string",
+          "description": "The unique Firebase Auth UID."
+        },
+        "displayName": {
+          "type": "string",
+          "description": "User display name."
+        },
+        "email": {
+          "type": "string",
+          "description": "User email address."
+        },
+        "photoUrl": {
+          "type": "string",
+          "description": "User avatar image URL."
+        },
+        "points": {
+          "type": "integer",
+          "description": "Gamification reward points earned by helping the community."
+        },
+        "karmaScore": {
+          "type": "integer",
+          "description": "Community trust karma rating (0-100)."
+        },
+        "levelRank": {
+          "type": "string",
+          "description": "Rank title such as Scout Urbano or Global Explorer."
+        },
+        "languagePreference": {
+          "type": "string",
+          "description": "Preferred UI language code: en or it.",
+          "enum": ["en", "it"]
+        },
+        "licensePlate": {
+          "type": "string",
+          "description": "Registered vehicle license plate."
+        },
+        "vehicleModel": {
+          "type": "string",
+          "description": "Vehicle make and model."
+        },
+        "vehiclePermit": {
+          "type": "string",
+          "description": "Permit category: none, resident, electric_vehicle, car_sharing, disability, commercial."
+        },
+        "favoriteAreaIds": {
+          "type": "array",
+          "description": "List of favorite saved parking area IDs."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Account creation timestamp."
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Last profile update timestamp."
+        }
+      },
+      "required": ["userId", "email"]
+    },
+    "ParkingReport": {
+      "title": "ParkingReport",
+      "description": "A crowd-sourced community report indicating a freeing spot or availability change.",
+      "type": "object",
+      "properties": {
+        "reportId": {
+          "type": "string",
+          "description": "Unique report identifier."
+        },
+        "userId": {
+          "type": "string",
+          "description": "Firebase Auth UID of the reporting driver."
+        },
+        "userName": {
+          "type": "string",
+          "description": "Display name of the reporter."
+        },
+        "areaId": {
+          "type": "string",
+          "description": "Target parking area or micro-spot ID."
+        },
+        "areaName": {
+          "type": "string",
+          "description": "Street or spot name."
+        },
+        "cityName": {
+          "type": "string",
+          "description": "City where the report was registered."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Geographical latitude."
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Geographical longitude."
+        },
+        "reportType": {
+          "type": "string",
+          "description": "Type of report: DEPARTURE_NOW, UPCOMING_10MIN, SPOT_TAKEN, FEEDBACK_CONFIRMED."
+        },
+        "validMinutes": {
+          "type": "integer",
+          "description": "Duration the signal remains active in minutes."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Timestamp when the report was submitted."
+        }
+      },
+      "required": ["reportId", "userId", "areaId", "latitude", "longitude"]
+    },
+    "TrafficIncident": {
+      "title": "TrafficIncident",
+      "description": "Real-time traffic congestion or emergency street closure alert.",
+      "type": "object",
+      "properties": {
+        "incidentId": {
+          "type": "string",
+          "description": "Unique incident identifier."
+        },
+        "title": {
+          "type": "string",
+          "description": "Short incident alert title."
+        },
+        "streetAffected": {
+          "type": "string",
+          "description": "Street or zone affected."
+        },
+        "cityName": {
+          "type": "string",
+          "description": "City identifier."
+        },
+        "severity": {
+          "type": "string",
+          "description": "CRITICAL, HIGH, MODERATE, LOW."
+        },
+        "delayMinutes": {
+          "type": "integer",
+          "description": "Estimated traffic delay in minutes."
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed explanation of the closure or bottleneck."
+        },
+        "suggestedAlternativeRoute": {
+          "type": "string",
+          "description": "Recommended alternative detour."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "Latitude coordinate."
+        },
+        "longitude": {
+          "type": "number",
+          "description": "Longitude coordinate."
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Reporting timestamp."
+        }
+      },
+      "required": ["incidentId", "title", "streetAffected"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": {
+        "$ref": "#/entities/UserProfile"
+      },
+      "description": "Stores user personal profiles, favorite parking areas, and app preferences. Read/write restricted to owner."
+    },
+    "/users/{userId}/favorites/{favId}": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "areaId": { "type": "string" },
+          "name": { "type": "string" },
+          "streetName": { "type": "string" },
+          "savedAt": { "type": "string", "format": "date-time" }
+        },
+        "required": ["areaId", "name"]
+      },
+      "description": "User saved favorite parking spots."
+    },
+    "/leaderboard/{userId}": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "userId": { "type": "string" },
+          "displayName": { "type": "string" },
+          "points": { "type": "integer" },
+          "karmaScore": { "type": "integer" },
+          "badgeTitle": { "type": "string" }
+        },
+        "required": ["userId", "points"]
+      },
+      "description": "Global community contribution leaderboard."
+    },
+    "/parking_reports/{reportId}": {
+      "schema": {
+        "$ref": "#/entities/ParkingReport"
+      },
+      "description": "Crowdsourced parking vacancy reports. Authenticated users can read and create their own."
+    },
+    "/traffic_incidents/{incidentId}": {
+      "schema": {
+        "$ref": "#/entities/TrafficIncident"
+      },
+      "description": "Real-time traffic and street closure emergency alerts for the city. Read-only for authenticated users."
+    }
+  }
+}
